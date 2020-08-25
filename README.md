@@ -60,18 +60,18 @@ Para visualizar a documentação completa das rotas elaborada no postman, acesse
 - Os posts e put de dados, foram feitos na tab `body`, na opção `x-www-form-urlencoded`;
 - A url base usada foi a `http://127.0.0.1:8000` criada pelo comando `php artisan serve`.
 
-| Method | URI                                      | Action                                   |
-| ------ | ---------------------------------------- | ---------------------------------------- |
-| POST   | /register                                | AuthController@register                  |
-| POST   | /login                                   | AuthController@login                     |
-| POST   | /logout                                  | AuthController@logout                    |
-| GET    | /users                                   | UserController@index                     |
-| GET    | /users/{id}                              | UserController@show                      |
-| PUT    | /users/{id}                              | UserController@put                       |
-| DELETE | /users/{id}                              | UserController@delete                    |
-| GET    | /operations                              | OperationController@index                |
-| GET    | account_transactions/user                | AccountTransactionController@listAccount |
-| GET    | account_transactions/totalizer/{user_id} | AccountTransactionController@totalizer   |
-| GET    | account_transactions/report              | AccountTransactionController@report      |
-| POST   | account_transactions                     | AccountTransactionController@store       |
-| DELETE | account_transactions/{id}/{user_id}      | AccountTransactionController@destroy     |
+| Method | URI                                          | Action                                   |
+| ------ | -------------------------------------------- | ---------------------------------------- |
+| POST   | api/register                                 | AuthController@register                  |
+| POST   | api/login                                    | AuthController@login                     |
+| POST   | api/logout                                   | AuthController@logout                    |
+| GET    | api/users                                    | UserController@index                     |
+| GET    | api/users/{id}                               | UserController@show                      |
+| PUT    | api/users/{id}                               | UserController@put                       |
+| DELETE | api/users/{id}                               | UserController@delete                    |
+| GET    | api/operations                               | OperationController@index                |
+| GET    | api/account_transactions/user                | AccountTransactionController@listAccount |
+| GET    | api/account_transactions/totalizer/{user_id} | AccountTransactionController@totalizer   |
+| GET    | api/account_transactions/report              | AccountTransactionController@report      |
+| POST   | api/account_transactions                     | AccountTransactionController@store       |
+| DELETE | api/account_transactions/{id}/{user_id}      | AccountTransactionController@destroy     |

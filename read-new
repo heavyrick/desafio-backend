@@ -1,8 +1,0 @@
-# Desafio Back-End - OW Interactive 20/21
-
-### Criar projeto
-$ git clone ...
-$ cd /desafio-backend/backend
-$ composer install
-
-Migrations

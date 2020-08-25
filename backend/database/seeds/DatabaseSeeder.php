@@ -21,7 +21,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard(); // Desabilita as restrições de 'mass assign'
-        //DB::statement('SET FOREIGN_KEY_CHECKS = 0;'); // Desabilita as chaves estrangeiras
+
+        if (DB::getDriverName() !== 'sqlite') {
+            DB::statement('SET FOREIGN_KEY_CHECKS = 0;'); // Desabilita as chaves estrangeiras
+        }
 
         foreach ($this->toTruncate as $table) { // Limpa as tabelas antes de uma nova inserção
             DB::table($table)->truncate();
@@ -33,7 +36,9 @@ class DatabaseSeeder extends Seeder
             AccountTransactionSeeder::class
         ]);
 
-        //DB::statement('SET FOREIGN_KEY_CHECKS = 1;'); // Habilita as chaves estrangeiras
+        if (DB::getDriverName() !== 'sqlite') {
+            DB::statement('SET FOREIGN_KEY_CHECKS = 1;'); // Habilita as chaves estrangeiras
+        }
         Model::reguard(); // Reabilita as restrições de 'mass assign'
     }
 }
